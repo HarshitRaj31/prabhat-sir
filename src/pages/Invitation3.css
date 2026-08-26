@@ -1,0 +1,842 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.prabhat-invitation {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  font-family: "DM Sans", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 50% -15%,
+      rgba(235, 255, 255, 0.95),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 10% 45%,
+      rgba(77, 218, 230, 0.45),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(31, 209, 225, 0.4),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #e4fcfc 0%,
+      #8be4e8 30%,
+      #25b8c8 62%,
+      #087c9c 100%
+    );
+}
+
+/* =========================================
+   WATER LIGHT
+========================================= */
+
+.inv-water-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.inv-glow-one {
+  width: 600px;
+  height: 280px;
+
+  top: -160px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(240, 255, 255, 0.9);
+}
+
+.inv-glow-two {
+  width: 450px;
+  height: 450px;
+
+  left: -220px;
+  bottom: -100px;
+
+  background: rgba(40, 210, 225, 0.35);
+}
+
+.inv-glow-three {
+  width: 500px;
+  height: 500px;
+
+  right: -220px;
+  bottom: -80px;
+
+  background: rgba(35, 195, 220, 0.3);
+}
+
+/* =========================================
+   LIGHT RAYS
+========================================= */
+
+.inv-ray {
+  position: absolute;
+
+  top: -20%;
+  height: 145%;
+
+  width: 190px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0)
+  );
+
+  filter: blur(12px);
+
+  opacity: 0.16;
+
+  transform-origin: top center;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  animation: rayPulse 7s ease-in-out infinite;
+}
+
+.inv-ray-one {
+  left: 10%;
+  transform: rotate(20deg);
+}
+
+.inv-ray-two {
+  left: 32%;
+
+  width: 230px;
+
+  transform: rotate(8deg);
+
+  animation-delay: 1.5s;
+}
+
+.inv-ray-three {
+  right: 30%;
+
+  width: 240px;
+
+  transform: rotate(-9deg);
+
+  animation-delay: 2.5s;
+}
+
+.inv-ray-four {
+  right: 8%;
+
+  transform: rotate(-20deg);
+
+  animation-delay: 4s;
+}
+
+/* =========================================
+   GLASS INVITATION
+========================================= */
+
+.prabhat-card {
+  position: relative;
+
+  width: min(760px, 82vw);
+  min-height: 650px;
+
+  padding: 58px 70px 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.42),
+      rgba(230, 255, 255, 0.18)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 35px 80px rgba(0, 70, 95, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+.card-shine {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -300px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.28);
+
+  filter: blur(40px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.inv-small-title {
+  position: relative;
+
+  margin: 0 0 20px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #075d72;
+
+  text-transform: uppercase;
+}
+
+.inv-symbol {
+  position: relative;
+
+  margin-bottom: 5px;
+
+  color: #d38f70;
+
+  font-size: 24px;
+
+  text-shadow:
+    0 0 15px rgba(211, 143, 112, 0.4);
+}
+
+.prabhat-card h1 {
+  position: relative;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(70px, 7vw, 100px);
+
+  line-height: 0.82;
+
+  font-weight: 500;
+
+  color: #084b5b;
+
+  letter-spacing: -3px;
+}
+
+.prabhat-card h1 span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  font-style: italic;
+
+  color: #a46f5d;
+
+  letter-spacing: -2px;
+}
+
+.inv-divider {
+  position: relative;
+
+  height: 1px;
+
+  margin: 27px 0 23px;
+
+  background: #b98470;
+
+  opacity: 0.65;
+}
+
+.inv-message {
+  position: relative;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 18px;
+
+  line-height: 1.65;
+
+  color: #486b74;
+}
+
+.prabhat-card h2 {
+  position: relative;
+
+  margin: 27px 0 3px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 39px;
+
+  font-weight: 600;
+
+  color: #084e5d;
+}
+
+.inv-role {
+  position: relative;
+
+  margin: 0;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #9b6b5b;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   EVENT INFO
+========================================= */
+
+.inv-info {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 470px;
+
+  margin-top: 25px;
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid rgba(8, 78, 93, 0.15);
+  border-bottom: 1px solid rgba(8, 78, 93, 0.15);
+
+  padding-bottom: 20px;
+}
+
+.info-item {
+  min-width: 180px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.info-item span {
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #72969d;
+}
+
+.info-item strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  letter-spacing: 1px;
+
+  color: #214f5b;
+}
+
+.info-divider {
+  width: 1px;
+  height: 42px;
+
+  margin: 0 15px;
+
+  background: rgba(8, 78, 93, 0.22);
+}
+
+.inv-footer {
+  position: relative;
+
+  margin: 21px 0 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  font-style: italic;
+
+  color: #607d82;
+}
+
+.inv-footer span {
+  margin-left: 7px;
+
+  color: #d38f70;
+}
+
+/* =========================================
+   FLOATING PHP / UDB
+========================================= */
+
+.tech-float {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(220, 251, 255, 0.65);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-weight: 700;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.35);
+}
+
+.php-float {
+  top: 20%;
+  left: 10%;
+
+  font-size: 25px;
+}
+
+.udb-float {
+  top: 31%;
+  left: 7%;
+
+  width: 85px;
+  height: 85px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+  letter-spacing: 3px;
+
+  background: rgba(255, 255, 255, 0.13);
+
+  border: 1px solid rgba(255, 255, 255, 0.38);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 60, 80, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.db-float {
+  top: 30%;
+  right: 9%;
+
+  font-size: 20px;
+}
+
+.code-float {
+  right: 10%;
+  bottom: 20%;
+
+  font-size: 25px;
+}
+
+/* =========================================
+   BUBBLES
+========================================= */
+
+.inv-bubble {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.05) 45%,
+      transparent 70%
+    );
+
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.3),
+    0 0 15px rgba(200, 255, 255, 0.25);
+
+  z-index: 4;
+
+  animation: bubbleUp 10s linear infinite;
+}
+
+.inv-bubble-one {
+  width: 18px;
+  height: 18px;
+
+  left: 17%;
+  bottom: -20px;
+}
+
+.inv-bubble-two {
+  width: 9px;
+  height: 9px;
+
+  left: 28%;
+  bottom: -20px;
+
+  animation-delay: 2s;
+}
+
+.inv-bubble-three {
+  width: 25px;
+  height: 25px;
+
+  right: 18%;
+  bottom: -30px;
+
+  animation-delay: 4s;
+}
+
+.inv-bubble-four {
+  width: 12px;
+  height: 12px;
+
+  right: 32%;
+  bottom: -20px;
+
+  animation-delay: 6s;
+}
+
+.inv-bubble-five {
+  width: 7px;
+  height: 7px;
+
+  left: 42%;
+  bottom: -15px;
+
+  animation-delay: 8s;
+}
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.inv-particle {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 10px white,
+    0 0 20px #7ef5ff;
+
+  opacity: 0.7;
+
+  z-index: 4;
+
+  animation: particleGlow 4s ease-in-out infinite;
+}
+
+.particle-a {
+  left: 25%;
+  top: 25%;
+}
+
+.particle-b {
+  right: 23%;
+  top: 28%;
+
+  animation-delay: 1s;
+}
+
+.particle-c {
+  left: 17%;
+  bottom: 25%;
+
+  animation-delay: 2s;
+}
+
+.particle-d {
+  right: 16%;
+  bottom: 24%;
+
+  animation-delay: 3s;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes rayPulse {
+  0%,
+  100% {
+    opacity: 0.08;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.7);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-45vh) translateX(18px) scale(1);
+  }
+
+  100% {
+    transform: translateY(-115vh) translateX(-15px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes particleGlow {
+  0%,
+  100% {
+    transform: scale(0.7);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .prabhat-card {
+    width: 86vw;
+    min-height: 610px;
+
+    padding: 45px;
+  }
+
+  .php-float {
+    left: 4%;
+  }
+
+  .udb-float {
+    left: 3%;
+  }
+
+  .db-float {
+    right: 4%;
+  }
+
+  .code-float {
+    right: 4%;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .prabhat-card {
+    width: 90vw;
+    min-height: auto;
+
+    padding: 38px 22px 30px;
+
+    border-radius: 22px;
+  }
+
+  .inv-small-title {
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+  }
+
+  .inv-symbol {
+    font-size: 19px;
+  }
+
+  .prabhat-card h1 {
+    font-size: 55px;
+
+    letter-spacing: -2px;
+  }
+
+  .prabhat-card h1 span {
+    font-size: 34px;
+
+    margin-top: 8px;
+  }
+
+  .inv-divider {
+    margin: 20px 0 17px;
+  }
+
+  .inv-message {
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .prabhat-card h2 {
+    margin-top: 20px;
+
+    font-size: 30px;
+  }
+
+  .inv-role {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .inv-info {
+    margin-top: 18px;
+
+    padding: 15px 0;
+  }
+
+  .info-item {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .info-item strong {
+    font-size: 12px;
+  }
+
+  .info-divider {
+    height: 35px;
+    margin: 0 8px;
+  }
+
+  .inv-footer {
+    margin-top: 16px;
+
+    font-size: 13px;
+  }
+
+  .php-float {
+    top: 12%;
+    left: 5%;
+
+    font-size: 14px;
+  }
+
+  .udb-float {
+    top: 22%;
+    left: 2%;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 9px;
+  }
+
+  .db-float {
+    top: 18%;
+    right: 5%;
+
+    font-size: 12px;
+  }
+
+  .code-float {
+    right: 6%;
+    bottom: 12%;
+
+    font-size: 16px;
+  }
+
+  .inv-bubble-four,
+  .inv-bubble-five {
+    display: none;
+  }
+
+  .inv-ray {
+    opacity: 0.07;
+  }
+}
