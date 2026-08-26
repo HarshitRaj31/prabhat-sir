@@ -226,11 +226,16 @@ function Invitation3() {
           </div>
 
           <div className="info-divider"></div>
-
-          <div className="info-item">
-            <span>ROOM NO.</span>
-            <strong>4201</strong>
+ <div className="info-item">
+            <span>OCCASION</span>
+            <strong>TEACHER'S DAY</strong>
           </div>
+               <div className="info-divider"></div>
+          <div className="info-item">
+            <span>VENUE</span>
+            <strong>ROOM NO. 4201</strong>
+          </div>
+            
         </motion.div>
 
         <motion.p
