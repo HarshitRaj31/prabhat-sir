@@ -235,11 +235,8 @@ function Invitation3() {
             <span>VENUE</span>
             <strong>ROOM NO. 4201</strong>
           </div>
-            <div className="info-divider"></div>
-            <div className="info-item">
-            <span>TIME</span>
-            <strong>11 AM</strong>
-          </div>
+          
+            
         </motion.div>
 
         <motion.p
