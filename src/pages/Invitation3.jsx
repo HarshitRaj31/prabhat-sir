@@ -203,7 +203,7 @@ function Invitation3() {
             delay: 1.7,
           }}
         >
-          Faculty · UDB
+          Faculty · Unstructure Database
         </motion.p>
 
         <motion.div
@@ -235,7 +235,11 @@ function Invitation3() {
             <span>VENUE</span>
             <strong>ROOM NO. 4201</strong>
           </div>
-            
+            <div className="info-divider"></div>
+            <div className="info-item">
+            <span>TIME</span>
+            <strong>11 AM</strong>
+          </div>
         </motion.div>
 
         <motion.p
